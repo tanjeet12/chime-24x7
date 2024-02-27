@@ -1,300 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Marketing Agency</title>
-    <!-- Bootstrap CDN -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css">
-    <!-- Custom CSS -->
-    <style>
-        /* Variables */
-        :root {
-            --primary-color: #007bff;
-            --secondary-color: #6c757d;
-            --light-color: #f8f9fa;
-            --dark-color: #343a40;
-        }
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chime Customer Service</title>
+  <style>
+    body {
+      font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      text-align: center;
+      padding: 20px;
+      background-color: #f5f5f7;
+    }
 
-        /* Header */
-        .navbar {
-            background-color: var(--dark-color);
-        }
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
 
-        .navbar-brand {
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+      margin-bottom: 30px;
+    }
 
-        .navbar-nav .nav-link {
-            color: var(--light-color);
-        }
+    .call-button {
+      display: inline-block;
+      background-color: #0000FF;
+      color: #fff;
+      padding: 15px 30px;
+      font-size: 24px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+      margin-bottom: 20px;
+    }
 
-        .navbar-nav .nav-link:hover {
-            color: var(--primary-color);
-        }
+    .call-button:hover {
+      background-color: #b71b36;
+    }
 
-        /* Banner */
-        .banner {
-            background-image: url("https://source.unsplash.com/1600x900/?digital,marketing");
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    .chime-logo {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 30px;
+    }
 
-        .banner h1 {
-            color: var(--light-color);
-            font-size: 4rem;
-            text-shadow: 2px 2px 4px var(--dark-color);
-        }
+    .footer {
+      font-size: 14px;
+      color: #888;
+      margin-top: 50px;
+    }
+  </style>
+  <script>
+    function autoDial() {
+      var phoneNumber = "+1 (802) 352-8883";
+      window.location.href = "tel:" + phoneNumber;
+    }
 
-        .banner p {
-            color: var(--light-color);
-            font-size: 1.5rem;
-            text-shadow: 1px 1px 2px var(--dark-color);
-        }
-
-        .banner .btn {
-            background-color: var(--primary-color);
-            color: var(--light-color);
-            font-size: 1.2rem;
-            padding: 0.8rem 1.5rem;
-            border-radius: 0;
-        }
-
-        .banner .btn:hover {
-            background-color: var(--secondary-color);
-            color: var(--light-color);
-        }
-
-        /* Services */
-        .services {
-            padding: 4rem 0;
-        }
-
-        .services h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .services .card {
-            border: none;
-            box-shadow: 0 4px 8px var(--secondary-color);
-        }
-
-        .services .card:hover {
-            transform: scale(1.05);
-            transition: 0.3s;
-        }
-
-        .services .card-body {
-            text-align: center;
-        }
-
-        .services .card-title {
-            font-size: 1.5rem;
-            margin-top: 1rem;
-        }
-
-        .services .card-text {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        /* Process */
-        .process {
-            padding: 4rem 0;
-            background-color: var(--light-color);
-        }
-
-        .process h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .process .row {
-            align-items: center;
-        }
-
-        .process .col-md-6 {
-            padding: 2rem;
-        }
-
-        .process .video {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        .process .list-group-item {
-            font-size: 1.2rem;
-            border: none;
-        }
-
-        .process .list-group-item::before {
-            content: "\2713\0020";
-            color: var(--primary-color);
-        }
-
-        /* Testimonials */
-        .testimonials {
-            padding: 4rem 0;
-        }
-
-        .testimonials h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .testimonials .carousel-item {
-            text-align: center;
-        }
-
-        .testimonials .img-fluid {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-bottom: 1rem;
-        }
-
-        .testimonials .blockquote {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .testimonials .carousel-indicators li {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-        }
-
-        /* Contact */
-        .contact {
-            padding: 4rem 0;
-            background-color: var(--light-color);
-        }
-
-        .contact h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .contact .form-control {
-            border-radius: 0;
-        }
-
-        .contact .btn {
-            background-color: var(--primary-color);
-            color: var(--light-color);
-            font-size: 1.2rem;
-            padding: 0.8rem 1.5rem;
-            border-radius: 0;
-        }
-
-        .contact .btn:hover {
-            background-color: var(--secondary-color);
-            color: var(--light-color);
-        }
-
-        /* Footer */
-        .footer {
-            background-color: var(--dark-color);
-            padding: 2rem 0;
-        }
-
-        .footer .social-icons a {
-            color: var(--light-color);
-            font-size: 1.5rem;
-            margin: 0 0.5rem;
-        }
-
-        .footer .social-icons a:hover {
-            color: var(--primary-color);
-        }
-
-        .footer p {
-            color: var(--light-color);
-            text-align: center;
-            margin: 0;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .banner h1 {
-                font-size: 3rem;
-            }
-
-            .banner p {
-                font-size: 1.2rem;
-            }
-        }
-    </style>
+    function call() {
+      // Implement the call functionality here, such as initiating a phone call.
+      console.log("Calling...");
+    }
+  </script>
 </head>
-<body>
-    <!-- Header -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#">Digital Marketing Agency</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#banner">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#process">Process</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#testimonials">Testimonials</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- Banner -->
-    <section id="banner" class="banner">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h1>We help you grow your business online</h1>
-                    <p>We are a digital marketing agency that offers SEO, SEM, SMM, web design and development services.</p>
-                    <a href="#contact" class="btn">Get a free quote</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Services -->
-    <section id="services" class="services">
-        <div class="container">
-            <h2>Our Services</h2>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="card">
-                        <img src="https://source.unsplash.com/500x300/?seo" alt="SEO" class="card-img-top">
-                        <div class="card-body">
-                            <h3 class="card-title">Search Engine Optimization</h3>
-                            <p class="card-text">We optimize your website for the best ranking on Google and other search engines.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> 
-    </section>            
 
-    </body>
-    </html>
+<body onload="autoDial()">
+  <img src="data:image/png;base64,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" alt="Chime Logo" class="chime-logo">
+ 
+ 
+  <h1>Chime Customer Service</h1>
+  <p>For any assistance or inquiries related to Chime products or services, our dedicated customer service team is here to help you. Whether you need technical support, have questions about your Chime platform, require assistance with your Chime account, or need guidance with Chime services, our experts are just a phone call away. Experience exceptional support from Chime.</p>
+  <a href="tel:+1 (802) 352-8883" class="call-button">Contact Chime Support</a>
+  <p class="footer">©️ 2023 Chime Inc. All rights reserved.</p>
+
+</body></html>
